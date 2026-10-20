@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gullola &amp; Enes’in düğün davetiyesi</title>
+<meta name="description" content="Gullola ve Enes’in düğün davetiyesi. 8 Aralık 2026, Çırağan Palace, İstanbul.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gullola &amp; Enes’in düğün davetiyesi">
+<meta property="og:description" content="8 Aralık 2026, Çırağan Palace, İstanbul">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%8D%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="images/sayfa-1-kapak.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Forum&family=Jost:wght@400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#E2E1DD;
+  --page-deep:#CFCECA;
+  --ink-ui:#000000;
+  --ink-ui-soft:#3E3E3C;
+  --btn-bg:#000000;
+  --btn-fg:#F4F2EB;
+  --liner:#ECEAE3;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#000000;
+    --page-deep:#000000;
+    --ink-ui:#F4F2EB;
+    --ink-ui-soft:#B9B7B0;
+    --btn-bg:#F4F2EB;
+    --btn-fg:#000000;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#000000;
+  --page-deep:#000000;
+  --ink-ui:#F4F2EB;
+  --ink-ui-soft:#B9B7B0;
+  --btn-bg:#F4F2EB;
+  --btn-fg:#000000;
+  color-scheme:dark;
+}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-x:hidden;
+  background-color:var(--page);
+  background-image:radial-gradient(ellipse 75% 65% at 50% 45%, var(--page) 0%, var(--page-deep) 100%);
+  color:var(--ink-ui);
+  font-family:Jost,"Helvetica Neue",Arial,sans-serif;
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* ---------- geometry ---------- */
+.scene{
+  --w:min(82vw, 400px, calc((100vh - 140px) / 1.64));
+  --w:min(82vw, 400px, calc((100svh - 140px) / 1.64));
+  --h:calc(var(--w) * 1.2958);
+  padding-top:calc(var(--w) * .34);
+  margin:12px 0;
+}
+.stage{
+  position:relative;
+  width:calc(var(--w) * 1.1);
+  height:calc(var(--h) + 120px);
+  container-type:inline-size;
+}
+
+/* ---------- vellum envelope ---------- */
+.envelope{position:absolute;left:0;top:0;width:100%;height:calc(var(--w) * 1.42);pointer-events:none}
+.env-part{transition:transform .8s cubic-bezier(.5,0,.5,1), opacity .6s ease .15s}
+.is-out .env-part{transform:translateY(42%);opacity:0;pointer-events:none;visibility:hidden;transition:transform .8s cubic-bezier(.5,0,.5,1), opacity .6s ease .15s, visibility 0s linear .9s}
+.env-back{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:var(--liner);
+  overflow:hidden;
+  box-shadow:0 22px 40px -18px rgba(0,0,0,.45);
+}
+.env-front{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  margin:0;
+  padding:0;
+  border:1px solid rgba(255,255,255,.65);
+  font:inherit;
+  color:inherit;
+  cursor:pointer;
+  pointer-events:auto;
+  background-color:rgba(246,246,242,.58);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 .3 0 0 0 -.08'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  -webkit-backdrop-filter:blur(2.5px) saturate(.6);
+  backdrop-filter:blur(2.5px) saturate(.6);
+  overflow:hidden;
+}
+.vellum-hint{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:3.4cqw;
+  text-align:center;
+  font-family:"Cormorant Garamond",Garamond,serif;
+  font-style:italic;
+  font-size:4.2cqw;
+  color:#2E2E2C;
+}
+.flap{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:calc(var(--w) * .34);
+  z-index:4;
+  border-radius:0 0 12cqw 12cqw;
+  background-color:rgba(248,248,245,.8);
+  -webkit-backdrop-filter:blur(2px);
+  backdrop-filter:blur(2px);
+  border:1px solid rgba(255,255,255,.7);
+  border-top:0;
+  box-shadow:0 4px 10px -6px rgba(0,0,0,.25);
+  transform-origin:50% 0;
+  transform:perspective(900px) rotateX(0deg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  animation:flapPeek 1.7s 1.2s ease-in-out 1;
+  transition:transform .75s cubic-bezier(.45,.05,.3,1), z-index 0s linear .36s, opacity .6s ease .15s;
+}
+@keyframes flapPeek{
+  0%,100%{transform:perspective(900px) rotateX(0deg)}
+  45%{transform:perspective(900px) rotateX(24deg)}
+}
+.flap-names{
+  font-family:"Pinyon Script",cursive;
+  font-size:8.4cqw;
+  color:#000;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  margin-top:-2cqw;
+  transition:opacity 0s linear .36s;
+}
+.is-opening .flap-names{opacity:0}
+.is-opening .flap{transform:perspective(900px) rotateX(180deg);z-index:1;animation:none}
+.is-out .flap{transform:perspective(900px) rotateX(180deg) translateY(-30%);opacity:0}
+
+/* ---------- booklet ---------- */
+.card-wrap{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:var(--w);
+  height:var(--h);
+  margin-left:calc(var(--w) / -2);
+  z-index:2;
+  perspective:2400px;
+  transform:translateY(calc(var(--w) * .09));
+  transition:transform .8s cubic-bezier(.3,.6,.25,1);
+  cursor:pointer;
+  touch-action:pan-y pinch-zoom;
+}
+.is-pulling .card-wrap{transform:translateY(calc(var(--w) * -.3))}
+.is-out .card-wrap{transform:translateY(0);z-index:5;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+
+.book-pos{
+  position:absolute;
+  inset:0;
+  transform-style:preserve-3d;
+  transform-origin:0 50%;
+  transition:transform .95s cubic-bezier(.4,.1,.2,1);
+}
+.book-turn{
+  position:absolute;
+  inset:0;
+  transform-style:preserve-3d;
+  transform-origin:-50% 50%;
+  transition:transform 1s cubic-bezier(.35,.1,.2,1);
+}
+.is-turning .book-turn{transform:rotateY(180deg)}
+.base,.leaf{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:0 50%}
+.base{
+  transform:rotateY(0deg);
+  transition:transform 1.05s cubic-bezier(.45,.05,.2,1);
+}
+.is-back .base{transform:rotateY(-180deg)}
+.no-anim *,.no-anim *::before,.no-anim *::after{transition:none !important}
+.leaf{
+  transform:rotateY(0deg) translateZ(1px);
+  transition:transform 1.05s cubic-bezier(.45,.05,.2,1);
+}
+.is-open .leaf{transform:rotateY(-180deg) translateZ(1px)}
+
+.pg{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  background:#F3F0E6;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  box-shadow:0 1px 0 rgba(0,0,0,.05), 0 24px 40px -18px rgba(0,0,0,.55);
+}
+.pg img{display:block;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.leaf-back,.base-back{transform:rotateY(180deg) translateZ(.5px)}
+.pg.leaf-back::after,.pg.base-front::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:9%;
+  pointer-events:none;
+}
+.pg.leaf-back::after{right:0;background:linear-gradient(to left, rgba(60,50,35,.22), rgba(60,50,35,0))}
+.pg.base-front::after{left:0;background:linear-gradient(to right, rgba(60,50,35,.22), rgba(60,50,35,0))}
+
+/* ---------- controls ---------- */
+.controls{
+  position:absolute;
+  z-index:6;
+  left:50%;
+  width:min(92vw, 520px);
+  margin-left:max(-46vw, -260px);
+  top:calc(var(--h) + 18px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(8px);
+  transition:opacity .3s ease, transform .3s ease, visibility 0s linear .3s, top .95s cubic-bezier(.4,.1,.2,1);
+}
+.is-out .controls{
+  opacity:1;
+  visibility:visible;
+  transform:none;
+  transition:opacity .5s ease .7s, transform .5s ease .7s, visibility 0s linear .7s, top .95s cubic-bezier(.4,.1,.2,1);
+}
+.row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 18px}
+.btn{
+  min-height:44px;
+  padding:10px 26px;
+  border:0;
+  border-radius:0;
+  background:var(--btn-bg);
+  color:var(--btn-fg);
+  font:400 1rem/1 Jost,"Helvetica Neue",Arial,sans-serif;
+  letter-spacing:.06em;
+  cursor:pointer;
+}
+.link{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  padding:0 4px;
+  border:0;
+  background:none;
+  color:var(--ink-ui);
+  font:italic 500 1.1rem/1 "Cormorant Garamond",Garamond,serif;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:4px;
+  cursor:pointer;
+}
+.link[hidden]{display:none}
+.hint{margin:0;font:italic 400 1rem/1.3 "Cormorant Garamond",Garamond,serif;color:var(--ink-ui-soft);text-align:center}
+
+/* ---------- music toggle ---------- */
+.sound{
+  position:fixed;
+  top:calc(env(safe-area-inset-top,0px) + 12px);
+  right:calc(env(safe-area-inset-right,0px) + 12px);
+  z-index:20;
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  border:1px solid currentColor;
+  border-radius:50%;
+  background:transparent;
+  color:var(--ink-ui);
+  opacity:.7;
+  cursor:pointer;
+  transition:opacity .3s ease;
+}
+.sound:hover{opacity:1}
+.sound[hidden]{display:none}
+.sound svg{width:20px;height:20px;display:block}
+.sound .off{display:none}
+.sound.is-muted .on{display:none}
+.sound.is-muted .off{display:block}
+
+:focus-visible{outline:2px solid var(--ink-ui);outline-offset:3px}
+.env-front:focus-visible{outline:2px solid #000;outline-offset:-5px}
+
+@media (prefers-reduced-motion: reduce){
+  .flap{animation:none}
+  .flap,.card-wrap,.book-pos,.book-turn,.leaf,.env-part,.controls{transition-duration:.01s !important;transition-delay:0s !important}
+}
+</style>
+</head>
+<body>
+<audio id="bgm" src="audio/idea-12.mp3" preload="none" loop playsinline></audio>
+<button class="sound" id="soundBtn" type="button" aria-label="Müziği kapat" aria-pressed="true" hidden>
+  <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6"/><path d="M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+  <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9.5l5 5"/><path d="M21 9.5l-5 5"/></svg>
+</button>
+<main class="scene" id="scene">
+  <div class="stage">
+
+    <div class="envelope">
+      <div class="env-back env-part" aria-hidden="true"></div>
+    </div>
+
+    <div class="card-wrap" id="cardWrap">
+      <div class="book-pos" id="bookPos">
+        <div class="book-turn">
+          <div class="base">
+            <div class="pg base-front" id="pg3"><img alt="Düğün günümüz: 8 Aralık 2026. Program: 17.00 karşılama, 18.00 nikâh töreni, 19.00 yemek, 20.30 kutlama. Mekân: Çırağan Palace, Çırağan Caddesi No:32, Beşiktaş, İstanbul." src="images/sayfa-3.jpg"></div>
+            <div class="pg base-back" id="pg4"><img alt="Arka kapak: siyah zemin üzerinde kala çiçeği ve “Düğünde görüşürüz!” yazısı." src="images/sayfa-4-arka.jpg"></div>
+          </div>
+          <div class="leaf">
+            <div class="pg leaf-front" id="pg1"><img alt="Kapak: siyah beyaz kala çiçekleri üzerinde G&amp;E monogramı." src="images/sayfa-1-kapak.jpg"></div>
+            <div class="pg leaf-back" id="pg2"><img alt="Sevgili misafirimiz, düğünümüzün sevincini sizinle paylaşmak istiyoruz. Bu özel gün, bizim için yeni bir hayatın ilk sayfası ve onu en sevdiklerimizle birlikte yazmak istiyoruz. Gullola &amp; Enes" src="images/sayfa-2.jpg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="envelope">
+      <button class="env-front env-part" id="envFront" type="button" aria-label="Zarfı aç">
+        <span class="vellum-hint" aria-hidden="true">Açmak için dokunun</span>
+      </button>
+      <div class="flap" aria-hidden="true"><span class="flap-names">Gullola &amp; Enes</span></div>
+    </div>
+
+    <div class="controls" id="controls">
+      <div class="row">
+        <button class="link" id="prevBtn" type="button" hidden>Önceki sayfa</button>
+        <button class="link" id="restartBtn" type="button" hidden>Başa dön</button>
+        <button class="btn" id="mainBtn" type="button">Davetiyeyi aç</button>
+        <a class="link" id="mapLink" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%87%C4%B1ra%C4%9Fan%20Palace%20Kempinski%20Istanbul" target="_blank" rel="noopener" hidden>Haritada aç</a>
+      </div>
+      <p class="hint" id="hint" aria-live="polite">Kapağa dokunarak da açabilirsiniz.</p>
+    </div>
+  </div>
+</main>
+
+<script>
+(function(){
+  var scene = document.getElementById('scene');
+  var envFront = document.getElementById('envFront');
+  var wrap = document.getElementById('cardWrap');
+  var bookPos = document.getElementById('bookPos');
+  var controls = document.getElementById('controls');
+  var mainBtn = document.getElementById('mainBtn');
+  var prevBtn = document.getElementById('prevBtn');
+  var restartBtn = document.getElementById('restartBtn');
+  var mapLink = document.getElementById('mapLink');
+  var hint = document.getElementById('hint');
+  var pages = { 1: document.getElementById('pg1'), 2: document.getElementById('pg2'), 3: document.getElementById('pg3'), 4: document.getElementById('pg4') };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var env = 'closed';      // closed | opening | out
+  var state = 'cover';     // cover | open | back
+  var focus = 'left';      // which inner page is centred on narrow screens
+  var mode = 'spread';     // spread | page
+
+  function layout(){
+    var w = wrap.offsetWidth, h = wrap.offsetHeight;
+    var vw = document.documentElement.clientWidth, vh = window.innerHeight;
+    var spreadS = Math.min((vw - 40) / (2 * w), (vh - 170) / h, 1.4);
+    mode = spreadS >= 0.85 ? 'spread' : 'page';
+    var t = 0, s = 1;
+    if (state === 'back' || state === 'turning'){ t = w; }
+    else if (state === 'open'){
+      if (mode === 'spread'){ s = spreadS; t = w / 2; }
+      else {
+        s = Math.max(1, Math.min((vw - 24) / w, (vh - 170) / h, 1.4));
+        t = focus === 'left' ? w / 2 + s * w / 2 : w / 2 - s * w / 2;
+      }
+    }
+    bookPos.style.transform = 'translateX(' + t.toFixed(1) + 'px) scale(' + s.toFixed(3) + ')';
+    controls.style.top = (h / 2 + s * h / 2 + 18).toFixed(1) + 'px';
+    updateUI();
+  }
+
+  function updateUI(){
+    var label, tip, showPrev = false;
+    if (state === 'cover'){ label = 'Davetiyeyi aç'; tip = 'Kapağa dokunarak da açabilirsiniz.'; }
+    else if (state === 'open'){
+      if (mode === 'page' && focus === 'left'){ label = 'Sonraki sayfa'; tip = 'Sayfalar arasında kaydırarak da geçebilirsiniz.'; }
+      else { label = 'Kapat'; tip = mode === 'page' ? 'Sayfalar arasında kaydırarak da geçebilirsiniz.' : 'Okuduktan sonra davetiyeyi kapatabilirsiniz.'; showPrev = mode === 'page'; }
+    }
+    else { label = 'Zarfa koy'; tip = 'Düğünde görüşmek üzere.'; }
+    mainBtn.textContent = label;
+    hint.textContent = tip;
+    prevBtn.hidden = !showPrev;
+    restartBtn.hidden = state !== 'back';
+    mapLink.hidden = state === 'cover';
+    var visible = state === 'cover' ? [1] : (state === 'back' || state === 'turning') ? [4] : (mode === 'spread' ? [2, 3] : [focus === 'left' ? 2 : 3]);
+    [1, 2, 3, 4].forEach(function(n){ pages[n].setAttribute('aria-hidden', String(visible.indexOf(n) < 0)); });
+  }
+
+  function setState(next){
+    if (next === 'open'){
+      focus = 'left';
+      scene.classList.add('is-open');
+      state = 'open';
+      layout();
+    } else if (next === 'back'){
+      /* the right half folds over to the left, so the back cover lands face up */
+      scene.classList.add('is-back');
+      state = 'back';
+      layout();
+    } else if (next === 'cover'){
+      /* turn the closed booklet over, then quietly reset to the starting pose */
+      state = 'turning';
+      scene.classList.add('is-turning');
+      setTimeout(function(){
+        scene.classList.add('no-anim');
+        scene.classList.remove('is-open', 'is-back', 'is-turning');
+        state = 'cover';
+        layout();
+        void scene.offsetWidth;
+        scene.classList.remove('no-anim');
+      }, reduce ? 0 : 1050);
+    }
+  }
+
+  function advance(){
+    if (state === 'cover') setState('open');
+    else if (state === 'open'){
+      if (mode === 'page' && focus === 'left'){ focus = 'right'; layout(); }
+      else setState('back');
+    }
+    else if (state === 'back') putBack();
+  }
+
+  /* background music: starts with the envelope tap, which counts as the guest’s permission to play sound */
+  var bgm = document.getElementById('bgm');
+  var soundBtn = document.getElementById('soundBtn');
+  var VOLUME = 0.6, musicOn = false, userMuted = false, resumeOnShow = false, fadeId = 0;
+
+  function fadeTo(target, ms){
+    var id = ++fadeId, from = bgm.volume, t0 = performance.now();
+    (function step(now){
+      if (id !== fadeId) return;
+      var k = Math.min(1, (now - t0) / ms);
+      try { bgm.volume = from + (target - from) * k; } catch (e) {}
+      if (k < 1) requestAnimationFrame(step);
+      else if (target === 0 && !musicOn) bgm.pause();
+    })(t0);
+  }
+  function setSoundUI(){
+    soundBtn.classList.toggle('is-muted', !musicOn);
+    soundBtn.setAttribute('aria-pressed', String(musicOn));
+    soundBtn.setAttribute('aria-label', musicOn ? 'Müziği kapat' : 'Müziği aç');
+  }
+  function startMusic(){
+    if (!bgm.paused) return;
+    if (userMuted){ if (!bgm.error) { soundBtn.hidden = false; setSoundUI(); } return; }
+    try { bgm.volume = 0; } catch (e) {}
+    var p = bgm.play();
+    if (p && p.then){
+      p.then(function(){ musicOn = true; soundBtn.hidden = false; setSoundUI(); fadeTo(VOLUME, 2500); })
+       .catch(function(){ soundBtn.hidden = true; });
+    }
+  }
+  bgm.addEventListener('error', function(){ soundBtn.hidden = true; });
+  soundBtn.addEventListener('click', function(){
+    musicOn = !musicOn;
+    userMuted = !musicOn;
+    setSoundUI();
+    if (musicOn){ bgm.play(); fadeTo(VOLUME, 800); }
+    else fadeTo(0, 600);
+  });
+  document.addEventListener('visibilitychange', function(){
+    if (document.hidden){ if (!bgm.paused){ resumeOnShow = true; bgm.pause(); } }
+    else if (resumeOnShow && musicOn){ bgm.play(); resumeOnShow = false; }
+  });
+
+  /* reverse of the opening: card back into the vellum, flap closes */
+  function closeEnvelope(){
+    env = 'closing';
+    scene.classList.remove('is-out');
+    setTimeout(function(){ scene.classList.remove('is-pulling'); }, reduce ? 0 : 850);
+    setTimeout(function(){ scene.classList.remove('is-opening'); }, reduce ? 0 : 1650);
+    setTimeout(function(){
+      env = 'closed';
+      envFront.tabIndex = 0;
+      envFront.removeAttribute('aria-hidden');
+      try { envFront.focus({ preventScroll: true }); } catch (e) { envFront.focus(); }
+    }, reduce ? 0 : 2400);
+  }
+  function putBack(){
+    if (env !== 'out') return;
+    if (state === 'back'){ setState('cover'); setTimeout(closeEnvelope, reduce ? 0 : 1150); }
+    else closeEnvelope();
+  }
+
+  function openEnvelope(){
+    if (env !== 'closed') return;
+    env = 'opening';
+    startMusic();
+    envFront.tabIndex = -1;
+    envFront.setAttribute('aria-hidden', 'true');
+    scene.classList.add('is-opening');
+    setTimeout(function(){ scene.classList.add('is-pulling'); }, reduce ? 0 : 650);
+    setTimeout(function(){
+      scene.classList.add('is-out');
+      env = 'out';
+      setTimeout(function(){ try { mainBtn.focus({ preventScroll: true }); } catch (e) { mainBtn.focus(); } }, reduce ? 0 : 900);
+    }, reduce ? 0 : 1450);
+  }
+
+  envFront.addEventListener('click', openEnvelope);
+  mainBtn.addEventListener('click', advance);
+  prevBtn.addEventListener('click', function(){ focus = 'left'; layout(); });
+  restartBtn.addEventListener('click', function(){ if (state === 'back') setState('cover'); });
+
+  var sx = null, sy = null, swiped = false;
+  wrap.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; swiped = false; }, { passive: true });
+  wrap.addEventListener('touchend', function(e){
+    if (sx === null || env !== 'out' || state !== 'open' || mode !== 'page') { sx = null; return; }
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){
+      swiped = true;
+      focus = dx < 0 ? 'right' : 'left';
+      layout();
+    }
+    sx = null;
+  });
+  wrap.addEventListener('click', function(){
+    if (swiped){ swiped = false; return; }
+    if (env === 'closed'){ openEnvelope(); return; }
+    if (env === 'out') advance();
+  });
+
+  window.addEventListener('resize', layout);
+  layout();
+})();
+</script>
+</body>
+</html>
