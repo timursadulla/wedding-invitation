@@ -23,4 +23,4 @@ Zarf açıldığında `audio/idea-12.mp3` yavaşça yükselerek çalmaya başlar
 - `images/sayfa-3.jpg`: iç sağ sayfa (program ve mekân)
 - `images/sayfa-4-arka.jpg`: arka kapak
 
-Görsellerde yazı yoktur, yalnızca çiçekler ve zemin vardır. Sayfalardaki bütün metinler (tarih, program, mekân, isimler) `index.html` içindeki `class="pt"` bloklarında gerçek yazı olarak durur; bu yüzden her ekranda keskin görünür ve oradan düzenlenir. Görseli değiştirirseniz yazısız hâlini kullanın. Tüm sayfalar aynı orandadır (yaklaşık 1 : 1,296).
+Görselleri aynı adla değiştirerek sayfaları güncelleyebilirsiniz. Tüm sayfalar aynı orandadır (yaklaşık 1 : 1,296).
