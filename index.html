@@ -13,7 +13,7 @@
 <link rel="preload" as="image" href="images/sayfa-1-kapak.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Forum&family=Jost:wght@400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Corinthia&family=Cormorant+Garamond:ital,wght@0,300;1,400;1,500&family=Forum&family=Jost:wght@400&family=Parisienne&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
 :root{
   --page:#E2E1DD;
@@ -215,11 +215,28 @@ body{
   box-shadow:0 1px 0 rgba(0,0,0,.05), 0 24px 40px -18px rgba(0,0,0,.55);
 }
 .pg img{display:block;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
-/* venue printed over page 3 (the image leaves this area blank) */
-.venue{position:absolute;inset:0;container-type:size;pointer-events:none;color:#1E1D1B;font-family:Forum,"Times New Roman",serif;text-align:center}
-.venue p{position:absolute;margin:0;transform:translateX(-50%);white-space:nowrap}
-.venue-name{top:77.9%;left:69.7%;font-size:4.6cqw;line-height:1;letter-spacing:.068em;text-transform:uppercase}
-.venue-addr{top:82%;left:70.2%;font-size:2.9cqw;line-height:1.38;letter-spacing:.045em}
+/* page text: real type over the artwork (the images carry no text), so it stays sharp at any size */
+.pt{position:absolute;inset:0;container-type:size;pointer-events:none;color:#141312;font-family:Forum,"Times New Roman",serif}
+.pt.light{color:#F4F1E8}
+.pt p{position:absolute;margin:0;line-height:1;white-space:nowrap}
+.pt .c{transform:translateX(-50%);text-align:center}
+.pt .u{text-transform:uppercase}
+.pt i{position:absolute;background:currentColor}
+.pt .rule{width:9cqw;height:max(1px,.13cqw)}
+.pt .dot{left:64.65%;width:.65cqw;height:.65cqw;border-radius:50%}
+.p2t{top:19.87%;left:51.89%;font:15.18cqw Corinthia,cursive}
+.pt .p2b{top:37.53%;left:50.9%;font:4.85cqw/1.46 Parisienne,cursive}
+.p2n{top:76.98%;left:49.28%;font:10.9cqw Parisienne,cursive}
+.p3k1{top:8.53%;left:68.42%;font-size:3.19cqw;letter-spacing:.337em}
+.p3date{top:16.12%;left:68.36%;font:300 12.78cqw "Cormorant Garamond",serif;font-variant-numeric:lining-nums;letter-spacing:-.062em}
+.p3day{top:26.91%;left:69.21%;font-size:3.07cqw;letter-spacing:.38em}
+.p3k2{top:37.47%;left:69.14%;font-size:3.07cqw;letter-spacing:.248em}
+.p3t{right:41.4%;font-size:2.9cqw;letter-spacing:.05em}
+.p3e{left:72.1%;font-size:2.5cqw;letter-spacing:.125em}
+.p3k3{top:74.05%;left:69.34%;font-size:2.75cqw;letter-spacing:.195em}
+.p3v{top:77.89%;left:69.66%;font-size:4.6cqw;letter-spacing:.068em}
+.pt .p3a{top:82.01%;left:70.18%;font:2.9cqw/1.38 Forum,"Times New Roman",serif;letter-spacing:.045em}
+.p4{left:66.9%;font-size:3.6cqw;letter-spacing:.345em}
 .leaf-back,.base-back{transform:rotateY(180deg) translateZ(.5px)}
 .pg.leaf-back::after,.pg.base-front::after{
   content:"";
@@ -337,13 +354,13 @@ body{
         <div class="book-turn">
           <div class="base">
             <div class="pg base-front" id="pg3"><img alt="Düğün günümüz: 8 Aralık 2026. Program: 17.00 karşılama, 18.00 nikâh töreni, 19.00 yemek, 20.30 kutlama. Mekân: Camlı Köşk, Mehmet Akif Ersoy Caddesi No:123, Ümraniye, İstanbul." src="images/sayfa-3.jpg">
-              <div class="venue" aria-hidden="true"><p class="venue-name">Camlı Köşk</p><p class="venue-addr">Mehmet Akif Ersoy Cd. No:123<br>Ümraniye, İstanbul</p></div>
+              <div class="pt" aria-hidden="true"><p class="p3k1 c u">Düğün günümüz</p><i class="rule" style="left:64.32%;top:14.17%"></i><p class="p3date c">08.12.2026</p><p class="p3day c u">Salı</p><i class="rule" style="left:64.32%;top:33.07%"></i><p class="p3k2 c u">Program</p><i style="left:64.97%;top:43.02%;width:max(1px,.13cqw);height:23.52%"></i><p class="p3t" style="top:44.50%">17:00</p><i class="dot" style="top:45.28%"></i><p class="p3e u" style="top:44.72%">Karşılama</p><p class="p3t" style="top:50.63%">18:00</p><i class="dot" style="top:51.36%"></i><p class="p3e u" style="top:50.85%">Nikâh töreni</p><p class="p3t" style="top:56.73%">19:00</p><i class="dot" style="top:57.44%"></i><p class="p3e u" style="top:56.95%">Yemek</p><p class="p3t" style="top:62.76%">20:30</p><i class="dot" style="top:63.57%"></i><p class="p3e u" style="top:62.98%">Kutlama</p><i class="rule" style="left:64.45%;top:70.45%"></i><p class="p3k3 c u">Lokasyon</p><p class="p3v c u">Camlı Köşk</p><p class="p3a c">Mehmet Akif Ersoy Cd. No:123<br>Ümraniye, İstanbul</p></div>
             </div>
-            <div class="pg base-back" id="pg4"><img alt="Arka kapak: siyah zemin üzerinde kala çiçeği ve “Düğünde görüşürüz!” yazısı." src="images/sayfa-4-arka.jpg"></div>
+            <div class="pg base-back" id="pg4"><img alt="Arka kapak: siyah zemin üzerinde kala çiçeği ve “Düğünde görüşürüz!” yazısı." src="images/sayfa-4-arka.jpg"><div class="pt light" aria-hidden="true"><p class="p4 c u" style="top:49.26%">Düğünde</p><p class="p4 c u" style="top:53.41%">görüşürüz!</p></div></div>
           </div>
           <div class="leaf">
             <div class="pg leaf-front" id="pg1"><img alt="Kapak: siyah beyaz kala çiçekleri üzerinde G&amp;E monogramı." src="images/sayfa-1-kapak.jpg"></div>
-            <div class="pg leaf-back" id="pg2"><img alt="Sevgili misafirimiz, düğünümüzün sevincini sizinle paylaşmak istiyoruz. Bu özel gün, bizim için yeni bir hayatın ilk sayfası ve onu en sevdiklerimizle birlikte yazmak istiyoruz. Gullola &amp; Enes" src="images/sayfa-2.jpg"></div>
+            <div class="pg leaf-back" id="pg2"><img alt="Sevgili misafirimiz, düğünümüzün sevincini sizinle paylaşmak istiyoruz. Bu özel gün, bizim için yeni bir hayatın ilk sayfası ve onu en sevdiklerimizle birlikte yazmak istiyoruz. Gullola &amp; Enes" src="images/sayfa-2.jpg"><div class="pt" aria-hidden="true"><p class="p2t c">Sevgili misafirimiz</p><p class="p2b c">Düğünümüzün sevincini sizinle<br>paylaşmak istiyoruz. Bu özel gün,<br>bizim için yeni bir hayatın ilk sayfası<br>ve onu en sevdiklerimizle birlikte<br>yazmak istiyoruz.</p><i class="rule" style="left:45.31%;top:70.35%;width:10.55cqw"></i><p class="p2n c">Gullola &amp; Enes</p></div></div>
           </div>
         </div>
       </div>
