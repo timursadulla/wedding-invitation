@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gullola &amp; Enes’in düğün davetiyesi</title>
-<meta name="description" content="Gullola ve Enes’in düğün davetiyesi. 8 Aralık 2026, Çırağan Palace, İstanbul.">
+<meta name="description" content="Gullola ve Enes’in düğün davetiyesi. 8 Aralık 2026, Camlı Köşk, Ümraniye, İstanbul.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gullola &amp; Enes’in düğün davetiyesi">
-<meta property="og:description" content="8 Aralık 2026, Çırağan Palace, İstanbul">
+<meta property="og:description" content="8 Aralık 2026, Camlı Köşk, Ümraniye, İstanbul">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%8D%3C/text%3E%3C/svg%3E">
 <link rel="preload" as="image" href="images/sayfa-1-kapak.jpg">
@@ -215,6 +215,11 @@ body{
   box-shadow:0 1px 0 rgba(0,0,0,.05), 0 24px 40px -18px rgba(0,0,0,.55);
 }
 .pg img{display:block;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
+/* venue printed over page 3 (the image leaves this area blank) */
+.venue{position:absolute;inset:0;container-type:size;pointer-events:none;color:#1E1D1B;font-family:Forum,"Times New Roman",serif;text-align:center}
+.venue p{position:absolute;margin:0;transform:translateX(-50%);white-space:nowrap}
+.venue-name{top:77.9%;left:69.7%;font-size:4.6cqw;line-height:1;letter-spacing:.068em;text-transform:uppercase}
+.venue-addr{top:82%;left:70.2%;font-size:2.9cqw;line-height:1.38;letter-spacing:.045em}
 .leaf-back,.base-back{transform:rotateY(180deg) translateZ(.5px)}
 .pg.leaf-back::after,.pg.base-front::after{
   content:"";
@@ -331,7 +336,9 @@ body{
       <div class="book-pos" id="bookPos">
         <div class="book-turn">
           <div class="base">
-            <div class="pg base-front" id="pg3"><img alt="Düğün günümüz: 8 Aralık 2026. Program: 17.00 karşılama, 18.00 nikâh töreni, 19.00 yemek, 20.30 kutlama. Mekân: Çırağan Palace, Çırağan Caddesi No:32, Beşiktaş, İstanbul." src="images/sayfa-3.jpg"></div>
+            <div class="pg base-front" id="pg3"><img alt="Düğün günümüz: 8 Aralık 2026. Program: 17.00 karşılama, 18.00 nikâh töreni, 19.00 yemek, 20.30 kutlama. Mekân: Camlı Köşk, Mehmet Akif Ersoy Caddesi No:123, Ümraniye, İstanbul." src="images/sayfa-3.jpg">
+              <div class="venue" aria-hidden="true"><p class="venue-name">Camlı Köşk</p><p class="venue-addr">Mehmet Akif Ersoy Cd. No:123<br>Ümraniye, İstanbul</p></div>
+            </div>
             <div class="pg base-back" id="pg4"><img alt="Arka kapak: siyah zemin üzerinde kala çiçeği ve “Düğünde görüşürüz!” yazısı." src="images/sayfa-4-arka.jpg"></div>
           </div>
           <div class="leaf">
@@ -354,7 +361,7 @@ body{
         <button class="link" id="prevBtn" type="button" hidden>Önceki sayfa</button>
         <button class="link" id="restartBtn" type="button" hidden>Başa dön</button>
         <button class="btn" id="mainBtn" type="button">Davetiyeyi aç</button>
-        <a class="link" id="mapLink" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%87%C4%B1ra%C4%9Fan%20Palace%20Kempinski%20Istanbul" target="_blank" rel="noopener" hidden>Haritada aç</a>
+        <a class="link" id="mapLink" href="https://maps.app.goo.gl/8vwcgwRRbHfECTjP9" target="_blank" rel="noopener" hidden>Haritada aç</a>
       </div>
       <p class="hint" id="hint" aria-live="polite">Kapağa dokunarak da açabilirsiniz.</p>
     </div>
