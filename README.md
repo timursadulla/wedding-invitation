@@ -2,7 +2,7 @@
 
 Aydınger zarftan çıkan, kitap gibi açılan dört sayfalık dijital düğün davetiyesi.
 
-Tek bir statik sayfadır, derleme adımı yoktur: `index.html` ve `images/` klasörü yeterlidir.
+Tek bir statik sayfadır, derleme adımı yoktur: `index.html`, `images/`, `fonts/` ve `audio/` klasörleri yeterlidir. Yazı tipleri sitenin içindedir, Google Fonts'a bağlı değildir.
 
 ## Yerelde açmak
 
