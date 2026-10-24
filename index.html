@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gullola &amp; Enes’in düğün davetiyesi</title>
-<meta name="description" content="Gullola ve Enes’in düğün davetiyesi. 8 Aralık 2026, Çırağan Palace, İstanbul.">
+<meta name="description" content="Gullola ve Enes’in düğün davetiyesi. 8 Aralık 2026, Camlı Köşk, İstanbul · 12 Aralık 2026, Plaza Hotel, Gaziantep.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gullola &amp; Enes’in düğün davetiyesi">
-<meta property="og:description" content="8 Aralık 2026, Çırağan Palace, İstanbul">
+<meta property="og:description" content="8 Aralık 2026 · Camlı Köşk, İstanbul — 12 Aralık 2026 · Plaza Hotel, Gaziantep">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%8D%3C/text%3E%3C/svg%3E">
 <link rel="preload" as="image" href="images/sayfa-1-kapak.jpg">
@@ -66,9 +66,9 @@ body{
 
 /* ---------- geometry ---------- */
 .scene{
-  --w:min(82vw, 400px, calc((100vh - 140px) / 1.64));
-  --w:min(82vw, 400px, calc((100svh - 140px) / 1.64));
-  --h:calc(var(--w) * 1.2958);
+  --w:min(82vw, 400px, calc((100vh - 140px) / 1.475));
+  --w:min(82vw, 400px, calc((100svh - 140px) / 1.475));
+  --h:calc(var(--w) * 1.131);
   padding-top:calc(var(--w) * .34);
   margin:12px 0;
 }
@@ -80,7 +80,7 @@ body{
 }
 
 /* ---------- vellum envelope ---------- */
-.envelope{position:absolute;left:0;top:0;width:100%;height:calc(var(--w) * 1.42);pointer-events:none}
+.envelope{position:absolute;left:0;top:0;width:100%;height:calc(var(--w) * 1.255);pointer-events:none}
 .env-part{transition:transform .8s cubic-bezier(.5,0,.5,1), opacity .6s ease .15s}
 .is-out .env-part{transform:translateY(42%);opacity:0;pointer-events:none;visibility:hidden;transition:transform .8s cubic-bezier(.5,0,.5,1), opacity .6s ease .15s, visibility 0s linear .9s}
 .env-back{
@@ -331,12 +331,12 @@ body{
       <div class="book-pos" id="bookPos">
         <div class="book-turn">
           <div class="base">
-            <div class="pg base-front" id="pg3"><img alt="Düğün günümüz: 8 Aralık 2026. Program: 17.00 karşılama, 18.00 nikâh töreni, 19.00 yemek, 20.30 kutlama. Mekân: Çırağan Palace, Çırağan Caddesi No:32, Beşiktaş, İstanbul." src="images/sayfa-3.jpg"></div>
+            <div class="pg base-front" id="pg3"><img alt="Düğün günümüz: 8 Aralık 2026, 19.30, Camlı Köşk, Ümraniye, İstanbul. 12 Aralık 2026, 18.00, Plaza Hotel, Gaziantep." src="images/sayfa-3.jpg"></div>
             <div class="pg base-back" id="pg4"><img alt="Arka kapak: siyah zemin üzerinde kala çiçeği ve “Düğünde görüşürüz!” yazısı." src="images/sayfa-4-arka.jpg"></div>
           </div>
           <div class="leaf">
             <div class="pg leaf-front" id="pg1"><img alt="Kapak: siyah beyaz kala çiçekleri üzerinde G&amp;E monogramı." src="images/sayfa-1-kapak.jpg"></div>
-            <div class="pg leaf-back" id="pg2"><img alt="Sevgili misafirimiz, düğünümüzün sevincini sizinle paylaşmak istiyoruz. Bu özel gün, bizim için yeni bir hayatın ilk sayfası ve onu en sevdiklerimizle birlikte yazmak istiyoruz. Gullola &amp; Enes" src="images/sayfa-2.jpg"></div>
+            <div class="pg leaf-back" id="pg2"><img alt="Sevgili misafirimiz, birlikte atacağımız bu güzel adımda sevincimizi en sevdiklerimizle paylaşmak istiyoruz. Varlığınız mutluluğumuzu, dualarınız yolumuzu güzelleştirecek. Gullola &amp; Enes" src="images/sayfa-2.jpg"></div>
           </div>
         </div>
       </div>
@@ -354,7 +354,8 @@ body{
         <button class="link" id="prevBtn" type="button" hidden>Önceki sayfa</button>
         <button class="link" id="restartBtn" type="button" hidden>Başa dön</button>
         <button class="btn" id="mainBtn" type="button">Davetiyeyi aç</button>
-        <a class="link" id="mapLink" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%87%C4%B1ra%C4%9Fan%20Palace%20Kempinski%20Istanbul" target="_blank" rel="noopener" hidden>Haritada aç</a>
+        <a class="link map-link" href="https://maps.app.goo.gl/8vwcgwRRbHfECTjP9" target="_blank" rel="noopener" hidden>Camlı Köşk konumu</a>
+        <a class="link map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Plaza%20Hotel%20Gaziantep" target="_blank" rel="noopener" hidden>Plaza Hotel konumu</a>
       </div>
       <p class="hint" id="hint" aria-live="polite">Kapağa dokunarak da açabilirsiniz.</p>
     </div>
@@ -371,7 +372,7 @@ body{
   var mainBtn = document.getElementById('mainBtn');
   var prevBtn = document.getElementById('prevBtn');
   var restartBtn = document.getElementById('restartBtn');
-  var mapLink = document.getElementById('mapLink');
+  var mapLinks = document.querySelectorAll('.map-link');
   var hint = document.getElementById('hint');
   var pages = { 1: document.getElementById('pg1'), 2: document.getElementById('pg2'), 3: document.getElementById('pg3'), 4: document.getElementById('pg4') };
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -412,7 +413,7 @@ body{
     hint.textContent = tip;
     prevBtn.hidden = !showPrev;
     restartBtn.hidden = state !== 'back';
-    mapLink.hidden = state === 'cover';
+    mapLinks.forEach(function(a){ a.hidden = state === 'cover'; });
     var visible = state === 'cover' ? [1] : (state === 'back' || state === 'turning') ? [4] : (mode === 'spread' ? [2, 3] : [focus === 'left' ? 2 : 3]);
     [1, 2, 3, 4].forEach(function(n){ pages[n].setAttribute('aria-hidden', String(visible.indexOf(n) < 0)); });
   }
