@@ -149,12 +149,11 @@ body{
   font-family:"Pinyon Script",cursive;
   font-size:8.4cqw;
   color:#000;
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
   margin-top:-2cqw;
-  transition:opacity 0s linear .58s;
+  transition:opacity .6s ease .3s, filter .6s ease .3s;
 }
-.is-opening .flap-names{opacity:0}
+/* once the flap is open its back faces us: the ink shows through the vellum, reversed and faint */
+.is-opening .flap-names{opacity:.32;filter:blur(.4px)}
 .is-opening .flap{transform:perspective(900px) rotateX(180deg);z-index:1;animation:none}
 .is-out .flap{transform:perspective(900px) rotateX(180deg) translateY(-30%);opacity:0}
 
