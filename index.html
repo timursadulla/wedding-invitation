@@ -65,8 +65,8 @@ body{
 
 /* ---------- geometry ---------- */
 .scene{
-  --w:min(82vw, 458px, calc((100vh - 140px) / 1.475));
-  --w:min(82vw, 458px, calc((100svh - 140px) / 1.475));
+  --w:min(82vw, 400px, calc((100vh - 140px) / 1.64));
+  --w:min(82vw, 400px, calc((100svh - 140px) / 1.64));
   --h:calc(var(--w) * 1.131);
   padding-top:calc(var(--w) * .34);
   margin:12px 0;
@@ -79,7 +79,7 @@ body{
 }
 
 /* ---------- vellum envelope ---------- */
-.envelope{position:absolute;left:0;top:0;width:100%;height:calc(var(--w) * 1.255);pointer-events:none}
+.envelope{position:absolute;left:0;top:0;width:100%;height:calc(var(--w) * 1.42);pointer-events:none}
 .env-part{transition:transform 1.2s cubic-bezier(.4,0,.2,1), opacity .9s ease .3s}
 .is-out .env-part{transform:translateY(42%);opacity:0;pointer-events:none;visibility:hidden;transition:transform 1.2s cubic-bezier(.4,0,.2,1), opacity .9s ease .3s, visibility 0s linear 1.3s}
 .env-back{
@@ -168,7 +168,7 @@ body{
   margin-left:calc(var(--w) / -2);
   z-index:2;
   perspective:2400px;
-  transform:translateY(calc(var(--w) * .09));
+  transform:translateY(calc(var(--w) * .145));
   transition:transform 1.3s cubic-bezier(.25,.1,.25,1);
   cursor:pointer;
   touch-action:pan-y pinch-zoom;
