@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gullola &amp; Enes’in düğün davetiyesi</title>
+<title>Wedding Invitation</title>
 <meta name="description" content="Gullola ve Enes’in düğün davetiyesi. 8 Aralık 2026, Camlı Köşk, İstanbul · 12 Aralık 2026, Plaza Hotel, Gaziantep.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gullola &amp; Enes’in düğün davetiyesi">
@@ -251,17 +251,6 @@ body{
   transition:opacity .5s ease .7s, transform .5s ease .7s, visibility 0s linear .7s, top .95s cubic-bezier(.4,.1,.2,1);
 }
 .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 18px}
-.btn{
-  min-height:44px;
-  padding:10px 26px;
-  border:0;
-  border-radius:0;
-  background:var(--btn-bg);
-  color:var(--btn-fg);
-  font:400 1rem/1 Jost,"Helvetica Neue",Arial,sans-serif;
-  letter-spacing:.06em;
-  cursor:pointer;
-}
 .link{
   min-height:44px;
   display:inline-flex;
@@ -277,7 +266,6 @@ body{
   cursor:pointer;
 }
 .link[hidden]{display:none}
-.hint{margin:0;font:italic 400 1rem/1.3 "Cormorant Garamond",Garamond,serif;color:var(--ink-ui-soft);text-align:center}
 
 /* ---------- music toggle ---------- */
 .sound{
@@ -327,7 +315,7 @@ body{
       <div class="env-back env-part" aria-hidden="true"></div>
     </div>
 
-    <div class="card-wrap" id="cardWrap">
+    <div class="card-wrap" id="cardWrap" role="button" tabindex="-1" aria-label="Sayfayı çevir">
       <div class="book-pos" id="bookPos">
         <div class="book-turn">
           <div class="base">
@@ -352,12 +340,9 @@ body{
     <div class="controls" id="controls">
       <div class="row">
         <button class="link" id="prevBtn" type="button" hidden>Önceki sayfa</button>
-        <button class="link" id="restartBtn" type="button" hidden>Başa dön</button>
-        <button class="btn" id="mainBtn" type="button">Davetiyeyi aç</button>
         <a class="link map-link" href="https://maps.app.goo.gl/8vwcgwRRbHfECTjP9" target="_blank" rel="noopener" hidden>Camlı Köşk konumu</a>
         <a class="link map-link" href="https://maps.app.goo.gl/gqBxvedhD2BA4D5g9" target="_blank" rel="noopener" hidden>Plaza Hotel konumu</a>
       </div>
-      <p class="hint" id="hint" aria-live="polite">Kapağa dokunarak da açabilirsiniz.</p>
     </div>
   </div>
 </main>
@@ -369,11 +354,8 @@ body{
   var wrap = document.getElementById('cardWrap');
   var bookPos = document.getElementById('bookPos');
   var controls = document.getElementById('controls');
-  var mainBtn = document.getElementById('mainBtn');
   var prevBtn = document.getElementById('prevBtn');
-  var restartBtn = document.getElementById('restartBtn');
   var mapLinks = document.querySelectorAll('.map-link');
-  var hint = document.getElementById('hint');
   var pages = { 1: document.getElementById('pg1'), 2: document.getElementById('pg2'), 3: document.getElementById('pg3'), 4: document.getElementById('pg4') };
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -402,17 +384,7 @@ body{
   }
 
   function updateUI(){
-    var label, tip, showPrev = false;
-    if (state === 'cover'){ label = 'Davetiyeyi aç'; tip = 'Kapağa dokunarak da açabilirsiniz.'; }
-    else if (state === 'open'){
-      if (mode === 'page' && focus === 'left'){ label = 'Sonraki sayfa'; tip = 'Sayfalar arasında kaydırarak da geçebilirsiniz.'; }
-      else { label = 'Kapat'; tip = mode === 'page' ? 'Sayfalar arasında kaydırarak da geçebilirsiniz.' : 'Okuduktan sonra davetiyeyi kapatabilirsiniz.'; showPrev = mode === 'page'; }
-    }
-    else { label = 'Zarfa koy'; tip = 'Düğünde görüşmek üzere.'; }
-    mainBtn.textContent = label;
-    hint.textContent = tip;
-    prevBtn.hidden = !showPrev;
-    restartBtn.hidden = state !== 'back';
+    prevBtn.hidden = !(state === 'open' && mode === 'page' && focus === 'right');
     mapLinks.forEach(function(a){ a.hidden = state === 'cover'; });
     var visible = state === 'cover' ? [1] : (state === 'back' || state === 'turning') ? [4] : (mode === 'spread' ? [2, 3] : [focus === 'left' ? 2 : 3]);
     [1, 2, 3, 4].forEach(function(n){ pages[n].setAttribute('aria-hidden', String(visible.indexOf(n) < 0)); });
@@ -499,6 +471,7 @@ body{
   /* reverse of the opening: card back into the vellum, flap closes */
   function closeEnvelope(){
     env = 'closing';
+    wrap.tabIndex = -1;
     scene.classList.remove('is-out');
     setTimeout(function(){ scene.classList.remove('is-pulling'); }, reduce ? 0 : 850);
     setTimeout(function(){ scene.classList.remove('is-opening'); }, reduce ? 0 : 1650);
@@ -526,14 +499,13 @@ body{
     setTimeout(function(){
       scene.classList.add('is-out');
       env = 'out';
-      setTimeout(function(){ try { mainBtn.focus({ preventScroll: true }); } catch (e) { mainBtn.focus(); } }, reduce ? 0 : 900);
+      wrap.tabIndex = 0;
+      setTimeout(function(){ try { wrap.focus({ preventScroll: true }); } catch (e) { wrap.focus(); } }, reduce ? 0 : 900);
     }, reduce ? 0 : 1450);
   }
 
   envFront.addEventListener('click', openEnvelope);
-  mainBtn.addEventListener('click', advance);
   prevBtn.addEventListener('click', function(){ focus = 'left'; layout(); });
-  restartBtn.addEventListener('click', function(){ if (state === 'back') setState('cover'); });
 
   var sx = null, sy = null, swiped = false;
   wrap.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; swiped = false; }, { passive: true });
@@ -551,6 +523,9 @@ body{
     if (swiped){ swiped = false; return; }
     if (env === 'closed'){ openEnvelope(); return; }
     if (env === 'out') advance();
+  });
+  wrap.addEventListener('keydown', function(e){
+    if ((e.key === 'Enter' || e.key === ' ') && env === 'out'){ e.preventDefault(); advance(); }
   });
 
   window.addEventListener('resize', layout);
